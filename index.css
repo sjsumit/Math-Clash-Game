@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+.bg-image {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(238, 58, 136, 1) 11.2%,
+    rgba(128, 162, 245, 1) 91.1%
+  );
+  filter: blur(18px);
+  -webkit-filter: blur(18px);
+}
+#game {
+  width: 400px;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  z-index: 2;
+  background-color: rgba(238, 58, 136, 0.2);
+  border: 5px solid rgba(128, 162, 245, 1);
+  box-shadow: 3px 3px 10px #ff1d5d;
+  border-radius: 2%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.points {
+  display: flex;
+  height: 10%;
+  justify-content: space-around;
+}
+.goal,
+.score {
+  width: 20%;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.goal {
+  background-color: #fe904a;
+  box-shadow: 3px 3px 10px #fe904a;
+}
+.timer {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 20px;
+  color: #15aabf;
+  display: flex;
+  align-items: center;
+}
+.timer-animation {
+  background-color: #3039dc;
+  height: 20px;
+  border-radius: 5px;
+  width: 90%;
+  margin: 15px;
+  border-radius: 2px;
+  animation: timer 3s linear infinite;
+}
+#grid {
+  /* height: 54%; */
+  width: 84%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  align-items: center;
+  background: #3039dc;
+}
+.cell {
+  height: 50px;
+  width: 16%;
+  flex-shrink: 0;
+  border-radius: 5%;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+.blank {
+  background: #2c2c2c;
+}
+.total-score {
+  text-align: center;
+  font-weight: 600;
+  margin: 0;
+}
+@keyframes timer {
+  from {
+    width: 90%;
+    background-color: green;
+  }
+  50% {
+    background-color: rgba(255, 166, 0, 0.685);
+  }
+  to {
+    width: 0;
+    background-color: rgb(253, 69, 69);
+  }
+}
+
+.selected {
+  background-color: white;
+  color: blue;
+  box-shadow: 2px 2px 10px solid;
+}
+
+.endscreen {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+}
+
+.hidden {
+  display: none;
+}
+
+.restart {
+  background-color: transparent;
+  padding: 10px 15px;
+  color: wheat;
+  border: 2px solid wheat;
+  cursor: pointer;
+}
+
+@media (max-height: 720px) {
+  #game {
+    height: 90%;
+    top: 5%;
+  }
+  .cell {
+    height: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  #game {
+    width: 90vw;
+  }
+}
